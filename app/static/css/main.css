@@ -1,0 +1,35 @@
+html * {
+    font-family: 'helvetica';
+}
+
+img { 
+    max-width: 50px;
+}
+
+.badge {
+    display: inline-block;
+    font-weight: badge-font-weight;
+    line-height: 1;
+    color: black;
+    text-align: right;
+    white-space: normal;
+    vertical-align: baseline;
+    font-size: 4mm;
+    background-color: rgb(244, 171, 82);
+    text-align: left;
+    margin-left: 20%;
+
+  
+    /* // Empty badges collapse automatically */
+  
+  }
+  
+.list-group {
+    color:rgb(47, 16, 3);
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    color:rgb(2, 46, 84);
+  }

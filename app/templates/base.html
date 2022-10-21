@@ -1,0 +1,31 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head%}
+    {{ super()}}
+    <title>
+        {% block title %} Flask Platzi | {%endblock%}
+    </title>
+{%endblock%}
+
+{%block body%}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {%endblock%}
+
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages  %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endwith %}
+
+    {% block content %}{%endblock%}
+
+<!-- importamos y heredamos los scripts nesesarios de javascript de bootstrap para que funcionen correctamente los mensajes flash -->
+    {% block scripts %}
+        {{ super() }}
+    {% endblock %}
+{% endblock %}
+
