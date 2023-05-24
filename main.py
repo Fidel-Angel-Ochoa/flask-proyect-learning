@@ -25,6 +25,11 @@ def not_found(error):
 def server_error(error):
     return render_template('500.html', error=error)
 
+@app.route('/task_admin_about')
+def task_admin_about():
+    
+    return render_template('task_admin_about.html')
+
 @app.route('/')
 def index():
     user_ip= request.remote_addr
