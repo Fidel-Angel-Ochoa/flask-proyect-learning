@@ -6,34 +6,42 @@
 
 {% block title%}
     {{super()}}
-    Bienvenido
+    Welcome
 {% endblock %}
 
 
 {% block content %}
     {% if username %}
-        <h1>Bienvenido, {{username | capitalize}}</h1>
+        <div class="container">
+            <h1 text-align="center">Welcome, {{username | capitalize}}</h1>
+        </div>
     {% endif %}
 
     {% if user_ip %}
-        <h3>
-            Tu IP es {{user_ip}}
-        </h3>
+        <div class="container">
+            <h3>
+                Your IP is {{user_ip}}
+                </h3>
+        </div>
 
     {% else %}
-        <a href="{{url_for('index')}}"> ir a inicio</a>
+    <div class="container">
+        <a text-aling="left" href="{{url_for('index')}}"> ir a inicio</a>
+    </div>
     {% endif %}
 
     <div class="container">
-        <h2>Crea una nueva tarea</h2>
+        <h2 text-aling="center">Create a new task</h2>
         
         {{ wtf.quick_form(todo_form) }}
     </div>
 
     <ul class="list-group">
-        <h2>Tareas</h2>
-        {% for todo in todos %}
+        <div class="container">
+            <h2>Tasks</h2>
+            {% for todo in todos %}
             {{macros.render_todo(todo, delete_form, update_form)}}
+        </div>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -33,15 +33,15 @@ def login():
 
                 login_user(user)
 
-                flash('bienvenido de nuevo')
+                flash('Welcome again')
 
                 redirect(url_for('hello'))
 
             else:
-                flash('La informacion no coincide')
+                flash('The information does not match')
 
         else:
-            flash('El usuario no existe')
+            flash('The username does no exist')
 
         return redirect(url_for('index'))
         
@@ -69,12 +69,12 @@ def signup():
 
             login_user(user)
 
-            flash('Bienvenide compañere')
+            flash('Welcome buddy')
 
             return redirect(url_for('hello'))
         
         else:
-            flash('El usuario ya existe')
+            flash('The user already exist')
 
     return render_template('signup.html', **context)
 
@@ -83,7 +83,7 @@ def signup():
 @login_required
 def logout():
     logout_user()
-    flash('regresa pronto')
+    flash('Comeback soon')
 
     return redirect(url_for('auth.login'))
     

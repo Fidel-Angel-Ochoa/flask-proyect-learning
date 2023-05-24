@@ -3,7 +3,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 
-credential = credentials.Certificate("app/serviceAccountKey.json")
+credential = credentials.ApplicationDefault()
 firebase_admin.initialize_app(credential)
 
 db = firebase_admin.firestore.client()

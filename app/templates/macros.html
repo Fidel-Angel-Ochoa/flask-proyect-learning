@@ -2,12 +2,12 @@
 
 {% macro render_todo(todo, delete_form, update_form) %} 
     <li class="list-group-item">
-        Descripción: {{todo.to_dict().description }}
+        Description: {{todo.to_dict().description }}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
         <span class="badge">{{todo.to_dict().done}}</span>
         
-        {{ wtf.quick_form(delete_form, action=url_for('delete', todo_id = todo.id))}}
         {{ wtf.quick_form(update_form, action=url_for('update', todo_id = todo.id, done=todo.to_dict().done))}}
+        {{ wtf.quick_form(delete_form, action=url_for('delete', todo_id = todo.id))}}
 
     </li>
     
